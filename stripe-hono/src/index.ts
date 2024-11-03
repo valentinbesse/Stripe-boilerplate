@@ -76,6 +76,35 @@ app.get('/cancel', (c) => {
   return c.text('Canceled!')
 })
 
+app.post('/webhook', async (c) => {
+  const rawBody = await c.req.text();
+  const signature = c.req.header('stripe-signature');
+
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(rawBody, signature!, process.env.STRIPE_WEBHOOK_SECRET!);
+  } catch (error: any) {
+    console.error(`Webhook signature verification failed: ${error.message}`);
+    throw new HTTPException(400);
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    console.log('Payment was successful!', session);
+
+    // TODO fulfill the purchase with your own business logic, for example:
+    // Update Database with order details
+    // Add credits to customer account
+    // Send confirmation email
+    // Print shipping label
+    // Tirgger order fulfillment workflow
+    // Update inventory
+    // Etc.
+  }
+
+  return c.text('Success');
+});
+
 const port = 3000
 console.log(`Server is running on port ${port}`)
 
