@@ -1,5 +1,20 @@
 # Stripe Boilerplate
 
+<p align="center">
+    <a href="https://www.npmjs.com/" alt="npm logo">
+        <img src="https://img.shields.io/npm/v/npm.svg?logo=nodedotjs" />
+    </a>
+  <a href="https://www.npmjs.com/" alt="npm logo">
+        <img src="https://img.shields.io/npm/v/node.svg?logo=nodedotjs&label=node.js" />
+    </a>
+  <a href="https://www.npmjs.com/" alt="npm logo">
+        <img src="https://img.shields.io/npm/v/hono.svg?logo=hono&label=hono" />
+    </a>
+  <a href="https://www.npmjs.com/" alt="npm logo">
+        <img src="https://img.shields.io/npm/v/stripe.svg?logo=stripe&label=stripe" />
+    </a>
+</p>
+
 This is a boilerplate for integrating Stripe with [Hono](https://hono.dev/) as the backend framework. 
 This setup includes basic configurations for managing Stripe payments in a Hono-based environment, making it easy to build and deploy a server that handles payment processing with Stripe.
 
