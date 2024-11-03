@@ -44,47 +44,40 @@ cd stripe-hono-boilerplate
 ### 2. Install Dependencies
 Install the required packages with:
 
-'''bash
+```bash
 npm install
-'''
+```
 
 ### 3. Set Up Environment Variables
 Create a .env file in the root directory and add your Stripe secret and publishable keys:
 
-'''plaintext
+```
 STRIPE_SECRET_KEY=your_stripe_secret_key
 STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-'''
+```
 
 ### 4. Run the Server
 Start the Hono server:
 
-'''bash
+```bash
 npm start
-'''
+```
 
 Your server should now be running at http://localhost:3000.
 
 ## Usage
 
 ### Sample Endpoints
-Create Payment Intent: /api/payment_intents/create
+Create Payment Intent: /checkout
 Creates a new payment intent with Stripe.
-
-Retrieve Payment Intent: /api/payment_intents/:id
-Retrieves a payment intent by its ID.
 
 ### Example Requests
 Here’s an example request to create a payment intent:
 
-'''bash
-curl -X POST http://localhost:3000/api/payment_intents/create \
+```bash
+curl -X POST http://localhost:3000/checkout \
 -H "Content-Type: application/json" \
--d '{
-  "amount": 5000,
-  "currency": "usd"
-}'
-'''
+```
 
 ## Customization
 This boilerplate provides a basic setup for Stripe integration. 
